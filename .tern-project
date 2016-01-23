@@ -1,0 +1,36 @@
+{
+  "ecmaVersion": 5,
+  "plugins": {
+    "guess-types": {
+      
+    },
+    "outline": {
+      
+    },
+    "complete_strings": {
+      
+    },
+    "chrome-extension": {
+      
+    },
+    "chrome-apps": {
+      
+    },
+    "angular": {
+      
+    },
+    "closure": {
+      
+    },
+    "ckeditor4.4.x": {
+      
+    },
+    "bootstrap": {
+      
+    }
+  },
+  "libs": [
+    "browser",
+    "jquery"
+  ]
+}
