@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>Filter</title>
+<script src="../js/angular.min.js">
+	
+</script>
+<script type="text/javascript">
+	angular.module('filterApp', []).controller('filterController',
+			function($scope) {
+				var someData = {
+					firstName : 'JENNA',
+					surName : 'GRANT',
+					dateJoined : new Date(2015, 2, 23),
+					consumption : 123.896,
+					plan : 'super-basic-plan'
+				};
+				// do the lowercaing here instead of using a filter
+
+				someData.firstName = someData.firstName.toLowerCase();
+
+				someData.surname = someData.surName.toLowerCase();
+
+				$scope.data = someData;
+			}),
+
+	angular.module('formApp', []).controller('formController',
+			function($scope) {
+				var person = {
+					firstName : "Jimmy",
+					age : 21,
+					address : {
+						street : '16 Somewhere Drive',
+						suburb : 'Port Kennedy',
+						state : 'Western Australia'
+					}
+				}
+				$scope.person = person;
+			})
+</script>
+</head>
+<body>
+
+	<div ng-app="filterApp" ng-controller="filterController">
+		<p>
+			<!-- Unfiltered data -->
+			<strong>First Name</strong>: {{data.firstName}}<br /> <strong>Surname:</strong>
+			: {{data.surName}}
+		</p>
+		<p>
+			<!-- Filtered data -->
+			<strong>First Name</strong>: {{data.firstName | lowercase}}<br /> <strong>Surname:</strong>
+			: {{data.surName | lowercase }}
+		</p>
+	</div>
+
+	<div ng-app="formApp" ng-controller="formController">
+
+		<form name="theForm">
+			<input type="text" name="firstName" ng-model="persone.firstName">
+			<input type="text" name="firstName" ng-model="persone.address.street">
+		</form>
+
+		<p>
+
+			First name is: {{person.firstName}} <br /> Street name is:
+			{{person.address.street}}
+
+		</p>
+	</div>
+</body>
+</html>
